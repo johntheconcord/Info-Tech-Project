@@ -1,0 +1,171 @@
+@charset "utf-8";
+/* CSS Document */
+/* BEGIN CSS "Clean Slate" */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section { 
+	display: block;
+}
+
+#pageContent {
+	font-family: sans-serif, Verdana, Geneva;
+	font-size: 14px;
+	margin-top: 10px;
+	margin-left: 10px;
+	width: 95%;
+	height: 100%; 
+}
+
+#mainContent {
+	font-family: sans-serif, Verdana, Geneva;
+	color: black;
+}
+
+
+.floatRight {
+	float: right;
+	margin-right: 10px;
+	margin-left: 10px; 
+	margin-bottom: 5px;
+} 
+
+.floatLeft {
+	float: left;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-bottom: 5px;
+	border-style: none;
+	
+}
+
+#rightSidebar {
+float:right;
+	width:200px;
+	margin-top:20px;
+	margin-left:10px;
+	margin-bottom:10px;
+	padding:5px;
+	border-width:thin;
+	border-style:solid;
+	border-color: dodgerblue;
+	border-top: 20px solid dodgerblue; 
+}
+
+header {
+	font-size: 10px;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #333;
+}
+nav {
+	font-size: 14px;
+	background-color: #E1E3F7;
+	padding: 5px;
+	margin-top: 5px;
+}
+main {
+	font-size: 14px;
+}
+
+.here {
+	color: dodgerblue;
+	font-weight: bold;
+	border: 2px; 
+	border-style: none;
+	border-color: none;
+}
+
+h1 {
+	font-size: 22px;
+	font-weight: bold;
+	color: dodgerblue;
+}
+
+h2 {
+	font-size: 18px;
+	font-weight: bold;
+	color: dodgerblue;
+}
+
+p {
+	font-size: 18px;
+	color: black;
+}
+
+a {
+	font-size: 12px;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-top: 30px;
+
+}
+
+
+
+tr {
+	font-size: 12px;
+	font-style: normal;
+	text-align: left;
+}
+
+
+
+footer {
+	font-size: 10px;
+	color: blue;
+	border-top-width: thin;
+	border-top-style: solid;
+	border-top-color: #666;
+	clear: both;
+}
+

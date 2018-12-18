@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+	<meta charset="utf-8" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Zenodo</title>
+	<script src="tools.js"></script> 
+	<link rel="stylesheet" href="tools.css" />  
+
+	<style>
+		#rightSidebar {
+			float: right; 
+			width: 35%;
+			height: 60%;
+			border-style: solid;
+			border-width: 2px;
+			border-color: #E1E3F7;
+			border-top: 20px solid #E1E3F7;
+			margin-top: 20px;
+			margin-left: 10px;
+			margin-bottom: 10px; 
+			padding: 5px;
+
+		}
+		
+		div#rightSidebar h2 {
+			color: darkslateblue;
+		}
+
+	</style>
+	<script>
+
+function fieldEmpty(fieldvalue, errorString) {
+    if (fieldvalue == "") {
+		return (errorString);
+	} else {
+    	return "";    
+	}
+}
+
+function radioButtonSelected (radioButtons, errorString) {
+	radioSelected = -1;
+
+	for (i=radioButtons.length-1; i > -1; i--) {
+		if (radioButtons[i].checked) {
+			radioSelected = i; 
+			i = -1;   
+		}
+	}
+
+	if (radioSelected == -1) {
+		return (errorString);
+	} else {
+		return "";
+	}
+}
+
+function checkboxesSelected (checkboxes, errorString) {
+
+	var checkboxesSelected = 0;
+
+	for (i=0; i<checkboxes.length; i++) {
+		
+		if (checkboxes[i].checked) {
+			
+			checkboxesSelected += 1; 
+		}
+	}
+
+	if (checkboxesSelected == 0)
+		return (errorString) ;
+	else if (checkboxesSelected == 1)
+		return "More than one source tool must be selected.\n"
+	else {
+		return "";
+	}
+}
+
+function validateUsername (fieldvalue) {
+    if (fieldvalue == "") return "No Username was entered.\n"
+    else if (fieldvalue.length < 5)
+        return "Usernames must be at least 5 characters.\n"
+    else if (/[^a-zA-Z0-9_-]/.test(fieldvalue))
+        return "Only a-z, A-Z, 0-9, - and _ allowed in Usernames.\n"
+    return ""
+}
+
+function validatePassword (fieldvalue) {
+    if (fieldvalue == "") return "No Password was entered.\n"
+    else if (fieldvalue.length < 6)
+        return "Passwords must be at least 6 characters.\n"
+    else if (!/[a-z]/.test(fieldvalue) || ! /[A-Z]/.test(fieldvalue) ||
+             !/[0-9]/.test(fieldvalue))
+        return "Passwords require one each of a-z, A-Z and 0-9.\n"
+    return ""
+}
+
+function validateAge (fieldvalue) {
+    if (isNaN(fieldvalue) || fieldvalue.length =="") 
+    	return "No Age was entered.\n"
+    else if (fieldvalue < 18 || fieldvalue > 110)
+        return "Age must be between 18 and 110.\n"
+    return ""
+}
+
+function validateEmail (fieldvalue) {
+    if (fieldvalue == "") return "No Email was entered.\n"
+        else if (!((fieldvalue.indexOf(".") > 0) &&
+                   (fieldvalue.indexOf("@") > 0)) ||
+                  /[^a-zA-Z0-9.@_-]/.test(fieldvalue))
+        return "The Email address is invalid.\n"
+    return ""
+}
+function validateState (fieldvalue) {
+	if (fieldvalue.length == 0)
+		return "State is empty.\n"
+	else if (fieldvalue.length == 1)
+        return "State must be exactly two letters.\n"
+    return ""
+}
+
+
+function validate (form) {
+    fail  = fieldEmpty(form.name.value, "Name is empty.\n")  
+    fail += fieldEmpty(form.address.value, "Address is empty.\n")
+	fail += fieldEmpty(form.city.value, "City is empty.\n")
+	fail += validateState(form.state.value)
+	fail += fieldEmpty(form.zip.value, "Zip is empty.\n")
+	fail += validateEmail(form.email.value)
+	fail += radioButtonSelected(form.platform, "Tool not selected.\n")
+	fail += checkboxesSelected(form.format, "No tools selected.\n")
+	fail += validateAge(form.age.value)
+    if (fail == "") return true
+    else { alert(fail); return false }
+}
+</script>
+	
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	
+</head>
+
+<body>
+	<div id="pageContent" style="width: 95%;">
+		<header>Zenodo Open Source Tool</header>
+		<nav>
+		<nav>
+<div>
+	
+	<a href="index.html">Home</a> | <span class="here">Info Tech</span>  | <a href="Page-3-a.html">Interests</a> |
+
+</div>
+ 
+
+
+
+
+<div class="navalt">
+<a href="Page-2-a.html">Intro</a> |<span class="here">Open Source</span> | <a href="Page-2-c.html">Tools</a> | <a href="Show-Results.php">Results</a>
+</div> 
+</nav>
+ 
+		</nav>
+		
+		<div id="rightSidebar"> 
+			<aside>
+				<h2>Did you Know?</h2>
+				<br>
+				<ul>
+					<li>Zenodo is derived from <a href="https://en.wikipedia.org/wiki/Zenodotus">Zenodotus</a>, the first librarian of the Ancient Library of Alexandria and father of the first recorded use of metadata, a landmark in library history.</li>
+					 
+				</ul>
+				<br>
+				<h2>Some Specifications</h2>
+				<br>
+				<ul> 
+					<li>Original author: 
+					<span class="blueText">OpenAIRE and CERN</span></li>
+					<li>Original release:
+					<span class="blueText">2013</span></li>
+					<li>Stable release: 
+					<span class="blueText">1.10 (August 2015)</span></li>
+					<li>Supported Operating Systems: 
+					<span class="blueText">Windows, macOS, Linux</span></li>
+				</ul>
+
+				
+			</aside> 
+		</div>
+		
+		<div id="mainContent">
+			<main>
+<h2>What is so cool about this tool?</h2> 
+					<figure class="floatLeft">
+					<img src="Images/zenodo-gradient-1000.png" id="image" width="250" height="150" alt="Zenodo Logo" 
+		 onmouseover="newPicture()" 
+		 onmouseout="oldPicture()"/>
+					</figure> 
+					
+					<div id="intro">
+					<p id="firstP" class="greyText">Zenodo is a general purpose open-access, research data repository that allows anyone and everyone access and the ability to upload research. It has been a great resource for data archiving and sharing in libraries and for understanding how to properly cite research data/datasets, just to name two of the many features it has to offer! <br><br> Much like Academia.edu, which is a large (30 million members strong) social media networking site for academics/researchers to come on, create profiles, and share any of their research, published or unpublished, Zenodo allows a researcher to do the same with papers, and more technical things that include code and datasets.
+
+              This repository is certainly innovative because it emphasizes global collaboration, having researchers of similar academic communities—or even different—share their content/research for anyone and everyone. The primary goal of Zenodo is much like Academia.edu and it was built and developed for researchers, as they say to make sure everyone can join in Open Science! Zenodo creators said that the digital revolution is in need of a retooling on how scholarly processes and libraries manage and handle data and software, and the first natural step is to make scholarly data and software open-access to everyone. 
+					</p>
+				</div>
+				<br>
+					<h2>How can you use this in libraries?</h2>
+					
+					<figure class="floatRight">
+						<img src="Images/zenodo-repository-and-the-open-research-data-in-h2020-oaw2016-2-638.jpg" id="imageII" width="200" height="120" alt="Zenodo Logo" 
+		 onmouseover="newPictureII()"
+		 onmouseout="oldPictureII()"/>    
+					</figure>
+					<p>
+				1. You can use it for data archiving and sharing, like in the <a href="http://altbibl.io/gazette/new-guide-to-data-archiving-and-sharing/">Wolbach Library</a>, the Harvard Smithsonian Center for Astrophysics.    
+					</p> 
+					<br> 
+				<p>2.As a resource to understand the proper ethical and citational re-use of data and datasets.<a href="https://library.oakland.edu/services/research-data/reuse.html">Here's</a> an example. </p> 
+					<br>
+					<h2>Is this tool being used extensively?</h2>
+					<p>Not entirely. Researchers in Zenodo have uploaded by now tens of thousands of research papers/data and datasets on said repository. Because of the uploads, there have been thousands of different communities such as the Human Brain Project and the Digital Historical Linguistics community that publishes works specific to their field. </p>
+				
+				<br>
+			  <figure class="floatLeft">
+				<img  src="Images/osurcesoftware.jpg" height="200" width="300" alt="Open Source Software" /> 
+					</figure>  
+					<h2>Benefits of Open-Source Tools</h2>
+				<ul> 
+				<li>
+				1. Free and typically secure!</li>
+				
+				<li>2. Anyone can fix bugs that are found without waiting for next release. </li>
+				<li>3. Not dependent on the original author of company that created it. The code can be modified however the end-user sees fit</li>
+				</ul>
+				<br>
+				<h2>Negatives of Open Source Technology</h2>
+				<ul>
+				<li>1. Not very straightforward to use. May require training.</li>
+				<li>2. Many of the latest hardward is incompatible with the open-source platform meaning reliance on third-party drivers.</li>
+				<li>3. User interfaces are not too attractive.</li>
+				</ul>
+					
+				<br>	
+					<h2>Advantages of Zenodo</h2>
+					<ul>
+						<li>1. Your data will be given a unique digital identifier (DOI) making it more accessible and citable! </li>
+						<li>2. Zenodo includes options to allow you to select access rights, access conditions, and licenses for your uploads. </li>
+						<li>3. Your data will be preserved! CERN (a large data center with petabytes of data) developed and manages Zenodo. Your data will live on CERN servers in the CERN Data Center. </li>
+					</ul> 
+					<br>
+					<h2>Disadvantages of Zenodo</h2>
+					<ul>
+						<li>1. Once a file is published, you are not able to make changes to the file on record. </li>
+						<li>2. The Zenodo community is still relatively small with tens of thousands of users</li>
+						<li>3. Does not have an advanced search syntax for ease in searching on all metadata available in Zenodo</li>
+					</ul>
+
+					
+			 
+			</main>
+			
+</div>
+		</div>
+		
+		<br>
+	<div id="form">
+<h2>Understanding Use and Knowledge of Research Data Repositories</h2>
+<p>Please fill out the form below to describe your knowledge of Zenodo and other open source research software. </p>
+
+
+<form method="post" action="johnyc241@gmail.com" onsubmit="return validate(this)">
+<p class="legend">Personal information</p>
+<fieldset id="personal">
+<label>Name:</label><input type="text" name="name" size="30" /> 
+<br />
+<label>Address:</label><input type="text" name="address" size="30" /> 
+<br />
+<label>Town/City:</label><input type="text" name="city" size="30" /> 
+<br />
+<label>State:</label><input type="text" name="state" size="2" maxlength="2" /><br /> 
+<label>Zipcode:</label><input type="text" name="zip" size="5" maxlength="5" /> 
+<br />
+<label>Email:</label><input type="text" name="email" />
+<br />
+<label>Age:</label><input type="text" name="age" size="3" maxlength="3" />
+</fieldset>
+
+<p class="legend">Research Data Repositories</p>
+<fieldset id="choices">
+<p id="device_type"><label>Choices:</label><select name="device_type">
+<option value="Zenodo">Zenodo</option>
+<option value="Open Science Framework">Open Science Framework</option> 
+<option value="Harvard Database">Harvard Database</option>
+<option value="figshare">figshare</option> 
+<option value="Dryad Digital Repository">Dryad Digital Repository</option>
+
+</select></p>
+
+<p id="platform"><label>Preferred Research Dataset</label><br/>
+<input type="radio" name="platform" value="B" />Web of Science 
+<input type="radio" name="platform" value="C" />JSTOR<br />
+<input type="radio" name="platform" value="T" />ScienceDirect
+<input type="radio" name="platform" value="P" />Scopus <br />
+<input type="radio" name="platform" value="D" />ProQuest Research Library </p>
+
+<p id="fileType"><label>Open Source Tools you use in libraries!</label><br/>
+<input type="checkbox" name="format" value="SubjectsPlus" />SubjectsPlus
+<input type="checkbox" name="format" value="LibKi" />LibKi  <br />
+<input type="checkbox" name="format" value="BibApp" />BibApp 
+<input type="checkbox" name="format" value="Guide on the Side" />Guide on the Side <br />
+<input type="checkbox" name="format" value="OpenRoom" />OpenRoom
+<input type="checkbox" name="format" value="Zotero" />Zotero
+
+</p>
+</fieldset>
+
+<p class="legend">Favorite Open Source Tool</p>
+<fieldset id="suggestions">
+<textarea
+name="comments" rows="3" cols="40" placeholder="Please let us know your favorite Open Source Tool"></textarea>
+</fieldset>
+
+<p id="buttons"><input type="submit" value="Submit Form"  />
+<input type="reset" value="Start Over" /></p>
+
+</form>
+</div>
+	<footer>John Curtis Jr &copy; 2017</footer>
+</body>
+</html> 

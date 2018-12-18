@@ -1,0 +1,247 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* BEGIN CSS "Clean Slate" */
+ 
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%; 
+	font: inherit;
+	vertical-align: baseline; 
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* END CSS "Clean Slate" */
+
+
+#pageContent {
+	font-family: sans-serif, Verdana, Geneva;
+	font-size: 14px; 
+	color: indianred; 
+	margin-top: 10px;
+	margin-left: 50px;
+	width: 90%; 
+	height: 100%; 
+}
+
+
+
+#mainContent { 
+	width: 100%;
+	font-family: sans-serif, Verdana, Geneva;
+} 
+
+
+
+.redText {
+	color: indianred;
+	font-size: 14px
+}
+.floatLeft {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	margin-top: 5px;
+	border-color: black;
+	border-style: solid;
+	border-width: 2px;
+}
+
+.floatRight {
+	float: right;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	margin-top: 5px;
+	border-color: black;
+	border-style: solid;
+	border-width: 2px;
+}
+
+.interface {
+	float: left;
+}
+.clearTop {
+	clear:both;
+}
+footer {
+	font-size: 10px;
+	border-top-width: thin;
+	border-top-style: solid;
+	border-top-color: #666;
+	margin-top:10px;
+	clear: both;
+}
+
+nav {
+	font-size: 14px;
+	background-color: #E1E3F7;
+	padding: 5px;
+	margin-top: 5px;
+}
+header {
+	font-size: 9px;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #333;
+	color: black;
+}
+main {
+	font-size: 12px;
+}
+h1 {
+	color: indianred;
+	font-size: 22px;
+	font-weight: bold;
+}
+h2 {
+	color: indianred;
+	font-size: 18px;
+	font-weight: bold;
+	margin:0 0 0 0;
+	padding:0
+}
+table {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+td {
+	padding: 5px;
+}
+p {
+	font-size: 18px;
+	color: black;
+	
+}
+li {
+	padding: 5px;
+	font-size: 18px;
+	color: black;
+}
+a {
+	color: darkblue;
+}
+a:visited {
+	color: grey;
+}
+a:hover {
+	color: gold;
+	background-color: darkblue
+}
+.here {
+	color: indianred;
+	font-weight: bold;
+	border: 2px; 
+	border-style: none;
+	border-color: none;
+}
+p#form {
+	margin:0 0 1em 0;
+	padding:0;font-size:90%
+}
+fieldset {background:#C361D2; 
+	border:none;
+	margin-bottom:1em;
+	width:24em;
+	padding-top:1.5em
+}
+
+p.legend {background:#DED983;
+	color:black;
+	padding:.2em .3em;
+	font-size:1.2em;
+	border:2px outset #DED983;
+	position:relative;
+	margin-bottom:-1em; 
+	width:10em;
+	margin-left:1em;
+	margin-top:1em;
+	text-align: center;
+}
+#form {font-family:sans-serif, "Trebuchet MS", Verdana;
+		width:25em;
+		margin-left: 50px; } 
+
+#personal {background:indianred;border:outset black}
+
+#choices {background:#00004d;border:outset #00004d}
+#suggestions {background:black;border:outset #004d00} 
+
+#personal label {
+	position:absolute;
+	font-size:90%;
+	padding-top:.2em;
+	left: 70px;
+	color: white;
+}
+#personal input {margin-left:9em;line-height:1.4em;margin-bottom:.2em;}
+
+#choices label {
+	position:absolute;
+	padding-top:.2em;
+	left:70px;
+	color: white;
+}
+select {margin-left:9em;margin-bottom:0}
+
+
+#platform {
+	font-size:90%;
+	color:white;
+}
+#platform input {
+	margin-left:120px;
+}
+#platform input + input {margin-left:1em}
+
+#fileType {
+	font-size:90%;
+	color:white;
+}
+#fileType input {
+	margin-left:9em;
+}
+#fileType input + input {margin-left:1em}
+#fileType br + input {margin-left:9em}
+
+
+textarea {font:.8em sans-serif, "Trebuchet MS", Verdana;width:29em;padding:.2em}
+
+input[type="submit"], input[type="reset"] {background:#DED983;font:1.2em "Trebuchet MS", Verdana, sans-serif}
+
+#buttons {text-align:center}

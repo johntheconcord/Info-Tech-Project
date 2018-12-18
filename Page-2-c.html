@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Info Tech 550 - Tools</title>
+<link rel="stylesheet" href="tools.css"/>
+
+<style>
+
+#rightSidebar {
+	float:right;
+	width:120px;
+	height:100px; 
+	margin-top:20px;
+	margin-left:10px;
+	margin-bottom:10px;
+	padding:5px;
+	border-width:thin;
+	border-style:solid;
+	border-color: black;
+	border-top: 20px solid indianred; 
+	color: black;
+}
+
+.floatLeft {
+	float:left;
+	margin-left: 5px;
+	margin-right:10px;
+	margin-top: 5px;
+	margin-bottom:10px;
+	border:medium;
+	border-style:solid;
+	border-color:black;	
+}
+ol {
+	margin-left: 25px;
+}
+
+h2 {
+	padding: 5px;
+	border-radius: 5px;
+	border: 2px;
+	border-style: solid;
+	border-color: black;
+	background-color: indianred;
+	color: white;
+}
+
+#directory {
+	margin-top: 10px;
+	margin-left:300px;
+	width: 300px;
+	border: 2px; 
+	border-style: solid;
+	border-color: black;
+	background-color: lightgray;
+	border-radius: 5px;
+}
+
+#opening {
+	width: 90%;
+	margin-top: 10px;
+	padding:5px;
+	border: 2px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	border-radius: 5px;
+}
+
+.button {
+	margin: 5px;
+	width: 150px;
+	height:8px;
+	padding: 5px;
+	border: 2px;
+	font-weight: bold;
+	border-style: solid;
+	border-color: black;
+	border-radius: 5px;
+	background-color: lightblue;
+
+}
+
+
+p {
+	padding: 5px;
+}
+
+
+</style>
+
+
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
+<script>
+function radioButtonSelected (radioButtons, errorString) { 
+	radioSelected = -1;
+
+	for (i=radioButtons.length-1; i > -1; i--) {
+		if (radioButtons[i].checked) {
+			radioSelected = i; 
+			i = -1;   
+		} 
+	}
+	
+	if (radioSelected == -1) {
+		return (errorString); 
+	} else {
+		return "";
+	} 
+} 
+
+
+function validate (form) {
+    fail  = radioButtonSelected(form.tool1, "Interest in Tool 1 not specified.\n")
+	fail  += radioButtonSelected(form.tool2, "Interest in Tool 2 not specified.\n")
+	fail  += radioButtonSelected(form.tool3, "Interest in Tool 3 not specified.\n")
+	fail  += radioButtonSelected(form.tool4, "Interest in Tool 4 not specified.\n")
+	fail  += radioButtonSelected(form.tool5, "Interest in Tool 5 not specified.\n")
+	fail  += radioButtonSelected(form.tool6, "Interest in Tool 6 not specified.\n")
+	fail  += radioButtonSelected(form.tool7, "Interest in Tool 7 not specified.\n")
+	fail  += radioButtonSelected(form.tool8, "Interest in Tool 8 not specified.\n")
+	fail  += radioButtonSelected(form.tool9, "Interest in Tool 9 not specified.\n")
+	fail  += radioButtonSelected(form.tool10, "Interest in Tool 10 not specified.\n")
+
+    if (fail == "") return true
+    else { alert(fail); return false }
+}
+</script>
+	
+	<style>
+	
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: indianred;
+    border-color: black;
+    color: black; 
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor:pointer;
+}
+
+
+</style>
+</head>
+
+<body>
+<div id="pageContent">
+<header>Term Project</header>
+	
+	
+<nav>
+<div>
+<a href="index.html">Home</a> | <span class="here">Info Tech</span>   | <a href="Page-3-a.html">Interests</a> | 
+</div> 
+
+<div class="navalt">
+<a href="Page-2-a.html">Intro</a> | <a href="Page-2-b.html">Open Source</a> | <span class="here">Tools</span>   | <a href="Show-Results.php">Results</a>
+</div> 
+</nav>
+
+	
+	
+<div id="rightSidebar"> 
+<aside>
+If you can not find a specific tool, use the Table of Contents to help direct you to the specific location.
+</aside>
+</div>
+	
+	
+<div id="mainContent">
+<main>
+<article>
+<h1>Info Tech 550 - Tools ...</h1>
+<figure class="floatLeft">
+<img src="Images/Info_tech_tools.jpg" alt="Intro Image" width="250" height="200" />
+</figure> 
+
+
+<p>This page contains information about the following tools:</p>
+	<div id="directory">
+		<h1> Table of Contents </h1>
+	<ol>
+		<li><a href="#tool1">Library Box</a></li>
+		<li><a href="#tool2">Zotero</a></li>
+		<li><a href="#tool3">Libki</a></li>
+		<li><a href="#tool4">Omeka</a></li>
+		<li><a href="#tool5">Open Exhibits</a></li>
+		<li><a href="#tool6">Alice</a></li>
+		<li><a href="#tool7">Calibre</a></li>
+		<li><a href="#tool8">Evergreen</a></li>
+		<li><a href="#tool9">WordSeer</a></li>
+		<li><a href="#tool10">Collective Access</a></li>
+	</ol>
+</div>
+
+<div id="opening">
+<p class="redText">This course has exposed us to many information technology tools. Most of these tools are used as an open source software and can be used in library settings and many other practical applications.
+
+	<br><br> Once you have gone over each technology, please take the time and fill out the survey in the end of this page or click the link below.
+
+</p>
+<br><div class="button"><a href="#myForm">Take the survey now!</a></div>
+
+
+</div>
+<ul>
+	
+	<li><a id="tool1"></a>
+		<h2>Library Box</h2>
+		<p>Library Box is a project started by Jason Griffey, the head of Library IT at University of Tennessee. The tool is a modified MR 20 TP link router. It provides it own wireless signal and connects to any device that has wifi. It becomes sort of a hotspot. Library Box can provide access to the internet in areas where there is no accessability to the web. Best way for students to learn this software is to buy the router and go along with tutorial videos. </p>
+		<p><a href="http://librarybox.us/">Url to tool</a></p>
+		<p><a href="https://www.youtube.com/watch?v=qOtpG7VnpJo">Url to useful tips</a></p>
+		<p><a href="#top">Back to top</a></p>
+	</li>
+	
+	<li><a id="tool2"></a>
+		<h2>Zotero</h2>
+		<p>Zotero is a personal research assistant that automatically senses content in your web browser, allowing you to add it to your personal library. Whether you're searching for a preprint on arXiv.org, a journal article from JSTOR, a news story from the New York Times, or a book from your university library catalog, Zotero has you covered with support for thousands of sites.</p>
+		<p><a href="https://www.zotero.org/">Url to tool</a></p>
+		<p><a href="https://www.youtube.com/watch?v=mP5AzJHXfIA">Url to useful tips</a></p>
+		<p><a href="#top">Back to top</a></p> 
+	</li>
+	
+	
+		<li><a id="tool3"></a>
+		<h2>Libki</h2>
+		<p>Libki is a web-based open source management tool that allows users to create a computer reservation and time management system. The reservation system can be customized to the user's needs, such as requiring reservations or allowing patrons to immediately use copen computers. One feature is that Libki can manage the amount of time that patrons can be logged on to the library computers. Libki is an easy software to learn and use. Students can look at tutorial videos or the link to useful tips to understand how it works. </p>
+		<p><a href="http://libki.org/">Url to tool</a></p>
+		<p><a href="https://www.youtube.com/watch?v=cUNkLTLBmbg">Url to useful tips</a></p>
+		<p><a href="#top">Back to top</a></p>
+	</li>
+
+		<li><a id="tool4"></a>
+		<h2>Omeka</h2>
+		<p>Omeka is a free, open source, web publishing platform and content managing system that was created for the display of library, museum, archives, and scholarly collections and exhibitions. One feature is that you are able to collaborate with others and make content. Anyone can use the software for many different purposes. The software is also free. There are many tutorial videos to help students get to learn more about the software and it's purpose. The link to useful tips will also help students to get started. </p>
+		<p><a href="https://omeka.org">Url to tool</a></p>
+		<p><a href="https://omeka.org/classic/docs/GettingStarted/Site_Planning_Tips/">Url to useful tips</a></p>
+		<p><a href="#top">Back to top</a></p>
+	</li> 
+	
+		<li><a id="tool5"></a>
+		<h2>Open Exhibits</h2>
+		<p>Open Exhibits is an initiative that looks to transform the way in which museums and other informal learning institutions produce and share computer-based exhibits. Developers and non-developers alike can use pre-programmed templates to create amazing exhibits. </p>
+		<p><a href="http://openexhibits.org/">Url to tool</a></p>
+		<p><a href="https://www.youtube.com/watch?v=ASXjKjWMAjg">Url to useful tips</a></p>
+		<p><a href="#top">Back to top</a></p> 
+	</li> 
+	
+			<li><a id="tool6"></a>
+		<h2>Alice</h2>
+		<p>Alice is an innovative and open source tool where users can program 3D animations, interactive narratives, or build simple games. It uses a block-based programming environment and teaches logical and computational thinking skills and fundamental principles of coding. A cool feature is that you are able to build your own 3D stories while learning programming. This program is easy to use and takes time to for students to grasp. Students can watch tutorial videos and also experiment with it. </p>
+		<p><a href="http://www.alice.org/">Url to tool</a></p>
+		<p><a href="https://www.youtube.com/watch?v=T3-7YrN3lpo">Url to useful tips</a></p>
+		<p><a href="#top">Back to top</a></p>
+	</li>
+	
+		<li><a id="tool7"></a>
+		<h2>Calibre</h2>
+		<p> Calibre is a cross-platform open-source suite of e-book software. Calibre supports organizing existing e-books into virtual libraries, displaying, editing, creating and conversion of e-books, as well as syncing e-books with a variety of e-readers.</p>
+		<p><a href="https://calibre-ebook.com/download">Url to tool</a></p>
+		<p><a href="http://blog.calibre-ebook.com/">Url to useful tips</a></p>
+		<p><a href="#top">Back to top</a></p> 
+	</li>
+
+<li><a id="tool8"></a>
+		<h2>Evergreen</h2>
+		<p>Evergreen is an open source library software. It helps library patrons find library materials and helps libraries to manage, catalog, and circulate the materials. It is used by more than 2,000 libraries around the world. Their database feature looks easy to use and very beneficial for librarians wanting to put information for books. Students wanting to use this software should probably watch tutorials because it could be confusing.</p>
+		<p><a href="https://evergreen-ils.org/about-us/">Url to tool</a></p>
+		<p><a href="https://www.youtube.com/watch?v=ArIIHWa-J9g">Url to useful tips</a></p>
+		<p><a href="#top">Back to top</a></p>
+	</li>
+	
+
+<li><a id="tool9"></a>
+		<h2>Wordseer</h2>
+		<p>Wordseer is a text analysis environment that combines visualization, information retrieval, sensemaking and natural language processing to make the contents of text navigable, accessible, and useful.</p>  
+		<p><a href="http://wordseer.berkeley.edu/">Url to tool</a></p> 
+		<p><a href="https://www.youtube.com/watch?v=S_taag3iHZw">Url to useful tips</a></p>
+		<p><a href="#top">Back to top</a></p>
+	</li>
+
+	<li><a id="tool10"></a>
+		<h2>Collective Access</h2>
+		<p>Collective Access is an open access relational database used for collections management of archives, mueseum collections and special collections. The software is free to use, modify, and share. Some features include the ability to complie printable reports, maps, and diagrams and managing tools for controlling the flow of checked in and out materials. If students want to learn more about the software, they could visit the website below for helpful tips.</p>
+		<p><a href="http://www.collectiveaccess.org/">Url to tool</a></p>
+		<p><a href="http://docs.collectiveaccess.org/wiki/Category:Users_Guide">Url to useful tips</a></p>
+		<p><a href="#top">Back to top</a></p>
+	</li>
+
+
+</ul>
+
+</article>
+<article>
+	<br>
+	<div id="box">
+<a id="myForm"></a>
+<h2>Information Technology Tools Survey</h2>
+<p> Please rate each tool's effectiveness and whether you see yourself using it with 1 being the lowest and 5 being the highest. </p><br>
+
+
+
+<form method="post" action="Show-Results.php" onsubmit="return this">     
+<br>   
+<p><label>LibraryBox:</label>
+<input type="radio" name="tool1" value="1" required />1 
+<input type="radio" name="tool1" value="2" required />2
+<input type="radio" name="tool1" value="3" required />3 
+<input type="radio" name="tool1" value="4" required />4
+<input type="radio" name="tool1" value="5" required />5
+</p><br>
+
+<p><label>Zotero:</label>
+<input type="radio" name="tool2" value="1" required />1 
+<input type="radio" name="tool2" value="2" required />2
+<input type="radio" name="tool2" value="3" required />3 
+<input type="radio" name="tool2" value="4" required />4
+<input type="radio" name="tool2" value="5" required />5
+</p><br>
+
+<p><label>Libki:</label> 
+<input type="radio" name="tool3" value="1" required />1 
+<input type="radio" name="tool3" value="2" required />2
+<input type="radio" name="tool3" value="3" required />3 
+<input type="radio" name="tool3" value="4" required />4
+<input type="radio" name="tool3" value="5" required />5
+</p><br>
+
+<p><label>Omeka:</label>
+<input type="radio" name="tool4" value="1" required />1 
+<input type="radio" name="tool4" value="2" required />2
+<input type="radio" name="tool4" value="3" required />3 
+<input type="radio" name="tool4" value="4" required />4
+<input type="radio" name="tool4" value="5" required />5
+</p><br>
+
+<p><label>Open Exhibits:</label>
+<input type="radio" name="tool5" value="1" required />1 
+<input type="radio" name="tool5" value="2" required />2
+<input type="radio" name="tool5" value="3" required />3 
+<input type="radio" name="tool5" value="4" required />4
+<input type="radio" name="tool5" value="5" required />5
+</p><br>
+
+<p><label>Alice:</label>
+<input type="radio" name="tool8" value="1" required />1 
+<input type="radio" name="tool8" value="2" required />2
+<input type="radio" name="tool8" value="3" required />3 
+<input type="radio" name="tool8" value="4" required />4
+<input type="radio" name="tool8" value="5" required />5
+</p><br>	
+
+<p><label>Calibre:</label>
+<input type="radio" name="tool6" value="1" required />1 
+<input type="radio" name="tool6" value="2" required />2
+<input type="radio" name="tool6" value="3" required />3 
+<input type="radio" name="tool6" value="4" required />4
+<input type="radio" name="tool6" value="5" required />5
+</p><br>
+
+<p><label>Evergreen:</label>
+<input type="radio" name="tool7" value="1" required />1 
+<input type="radio" name="tool7" value="2" required />2
+<input type="radio" name="tool7" value="3" required />3 
+<input type="radio" name="tool7" value="4" required />4
+<input type="radio" name="tool7" value="5" required />5
+</p> <br>
+
+
+
+<p><label>WordSeer:</label>
+<input type="radio" name="tool9" value="1" required />1 
+<input type="radio" name="tool9" value="2" required />2
+<input type="radio" name="tool9" value="3" required />3 
+<input type="radio" name="tool9" value="4" required />4
+<input type="radio" name="tool9" value="5" required />5
+</p><br>
+
+<p><label>CollectiveAccess:</label>
+<input type="radio" name="tool10" value="1" required />1 
+<input type="radio" name="tool10" value="2" required />2
+<input type="radio" name="tool10" value="3" required />3 
+<input type="radio" name="tool10" value="4" required />4
+<input type="radio" name="tool10" value="5" required />5
+
+</p><br>
+	 
+
+<p><input class="buttons" type="submit" value="submit"  />
+<input type="reset" value="Reset" /></p>
+</form>
+
+</div>
+</article>
+</main>
+</div>
+<footer>Created by John Curtis Jr &copy;</footer>
+</div>
+</body>
+</html>
